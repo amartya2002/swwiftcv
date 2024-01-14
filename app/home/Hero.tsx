@@ -26,12 +26,13 @@ export const Hero = () => {
 
             <div className="mt-8  gap-6 md:flex items-baseline">
               <div className="flex h-10  items-center mb-6">
-                <button className=" animate-border rounded-xl bg-white bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-[length:400%_400%] p-[1px] ">
-                  <span className="inline-flex rounded-xl bg-zinc-800 px-6 py-2 font-medium justify-center w-full text-zinc-300 ">
+                <button className=" animate-border rounded-xl bg-white bg-gradient-to-r from-red-500 via-purple-500 to-orange-500 bg-[length:400%_400%] p-[1.5px] [animation-duration:_6s]">
+                  <span className="inline-flex rounded-[10.5px] bg-zinc-800 px-6 py-2 font-medium justify-center w-full text-zinc-300 ">
                     {" "}
                     Get Started
                   </span>
                 </button>
+
               </div>
 
               <Link
