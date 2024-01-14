@@ -1,8 +1,11 @@
 import { useAppDispatch, useAppSelector } from "@/app/lib/redux/hooks";
 import { changeProfile, selectProfile } from "@/app/lib/redux/resumeSlice";
 import { BaseForm } from "./Form";
-import { Input } from "./Form/InputGroup";
+import { Inputi } from "./Form/InputGroup";
+import { Input } from "@/components/ui/input";
 import { ResumeProfile } from "@/app/lib/redux/types";
+import { INPUT_CLASS_NAME } from "./Form/InputGroup";
+import { InputGroupWrapper } from "./Form/InputGroup";
 
 export const ProfileForm = () => {
   const profile = useAppSelector(selectProfile);
@@ -16,16 +19,17 @@ export const ProfileForm = () => {
 
   return (
     <BaseForm>
-      <div className="grid grid-cols-6 gap-3">
-        <Input
+      <div className="grid grid-cols-6 gap-8">
+        <Inputi
           label="Name"
-          labelClassName="col-span-full"
+          labelClassName="col-span-full "
           name="name"
           placeholder="Your Name"
           value={name}
           onChange={handleProfileChange}
+          
         />
-        <Input
+        <Inputi
           label="Objective"
           labelClassName="col-span-full"
           name="summary"
@@ -33,7 +37,7 @@ export const ProfileForm = () => {
           value={summary}
           onChange={handleProfileChange}
         />
-        <Input
+        <Inputi
           label="Email"
           labelClassName="col-span-4"
           name="email"
@@ -41,7 +45,7 @@ export const ProfileForm = () => {
           value={email}
           onChange={handleProfileChange}
         />
-        <Input
+        <Inputi
           label="Phone"
           labelClassName="col-span-2"
           name="phone"
@@ -49,7 +53,7 @@ export const ProfileForm = () => {
           value={phone}
           onChange={handleProfileChange}
         />
-        <Input
+        <Inputi
           label="Website"
           labelClassName="col-span-4"
           name="url"
@@ -57,7 +61,7 @@ export const ProfileForm = () => {
           value={url}
           onChange={handleProfileChange}
         />
-        <Input
+        <Inputi
           label="Location"
           labelClassName="col-span-2"
           name="location"

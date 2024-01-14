@@ -50,7 +50,7 @@ const ResumeIFrame = ({
   const height = isA4 ? A4_HEIGHT_PX : LETTER_HEIGHT_PX;
 
   return (
-    <div
+    <div className="rounded-2xl p-2 "
       style={{
         maxWidth: `${width * scale}px`,
         maxHeight: `${height * scale}px`,
@@ -62,9 +62,9 @@ const ResumeIFrame = ({
           height: `${height}px`,
           transform: `scale(${scale})`,
         }}
-        className={`origin-top-left bg-white shadow-lg`}
+        className={`origin-top-left bg-white rounded-2xl `}
       >
-        <Frame
+        <Frame className="rounded-2xl "
           initialContent={iframeInitialContent}
           style={{ width: "100%", height: "100%" }}
           key={isA4 ? "A4" : "LETTER"}

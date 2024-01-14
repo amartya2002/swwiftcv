@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { INPUT_CLASS_NAME } from "./InputGroup";
+import { Input } from "@/components/ui/input";
 
 export const FeaturedSkillInput = ({
   skill,
@@ -18,7 +19,7 @@ export const FeaturedSkillInput = ({
 }) => {
   return (
     <div className={`flex ${className}`}>
-      <input
+      <Input
         type="text"
         value={skill}
         placeholder={placeholder}
@@ -57,7 +58,7 @@ const CircleRating = ({
           onMouseLeave={() => setHoverRating(null)}
         >
           <div
-            className="h-5 w-5 rounded-full transition-transform duration-200 hover:scale-[120%]"
+            className="h-2 w-3 rounded-full transition-transform duration-200 hover:scale-[120%]"
             style={{
               backgroundColor:
                 (hoverRating !== null && hoverRating >= idx) ||

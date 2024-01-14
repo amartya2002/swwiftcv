@@ -1,3 +1,6 @@
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
 interface InputProps<K extends string, V extends string> {
   label: string;
   labelClassName?: string;
@@ -18,19 +21,32 @@ export const InlineInput = <K extends string>({
   onChange,
 }: InputProps<K, string>) => {
   return (
-    <label
+    <div
       className={`flex gap-2 text-base font-medium text-gray-700 ${labelClassName}`}
     >
-      <span className="w-28">{label}</span>
-      <input
+      {/* <Label className="w-28">{label}</Label> */}
+      {/* <input
         type="text"
         name={name}
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(name, e.target.value)}
-        className="w-[5rem] border-b border-gray-300 text-center font-semibold leading-3 outline-none"
+        className="w-[5rem]   text-center font-semibold leading-3 outline-none"
         style={inputStyle}
-      />
-    </label>
+      /> */}
+
+      <div className="flex w-full max-w-xs items-center gap-2">
+        <Label htmlFor="Theme Color" className="w-28">{label}</Label>
+        <Input
+          name={name}
+          type="text"
+          placeholder={placeholder}
+          value={value}
+          onChange={(e) => onChange(name, e.target.value)}
+          style={inputStyle}
+          className=""
+        />
+      </div>
+    </div>
   );
 };

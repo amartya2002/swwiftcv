@@ -6,6 +6,7 @@ import {
 } from "../../fonts/constants";
 import { PX_PER_PT } from "@/app/lib/constants";
 import dynamic from "next/dynamic";
+import { Button } from "@/components/ui/button";
 
 const SelectionComponent = ({
   selectedColor,
@@ -28,8 +29,9 @@ const SelectionComponent = ({
   };
 
   return (
-    <div
-      className="flex w-[105px] cursor-pointer items-center justify-center rounded-md border border-gray-300 py-1.5 shadow-sm hover:border-gray-400 hover:bg-gray-100"
+    <Button
+    variant={"outline"}
+      className="flex w-[105px] items-center justify-center "
       onClick={onClick}
       style={isSelected ? selectedStyle : style}
       onKeyDown={(e) => {
@@ -38,12 +40,12 @@ const SelectionComponent = ({
       tabIndex={0}
     >
       {children}
-    </div>
+    </Button>
   );
 };
 
 const SelectionsWrapper = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mt-2 flex flex-wrap gap-3">{children}</div>;
+  return <div className="flex flex-wrap gap-4 my-8">{children}</div>;
 };
 
 const FontFamilySelections = ({
@@ -110,6 +112,7 @@ export const FontSizeSelections = ({
 
         return (
           <SelectionComponent
+          
             key={idx}
             selectedColor={themeColor}
             isSelected={isSelected}
@@ -148,9 +151,9 @@ export const DocumentSizeSelections = ({
           >
             <div className="flex flex-col items-center">
               <div>{type}</div>
-              <div className="text-xs">
+              {/* <div className="text-xs">
                 {type === "Letter" ? "(US, Canada)" : "(India,Other Countries)"}
-              </div>
+              </div> */}
             </div>
           </SelectionComponent>
         );

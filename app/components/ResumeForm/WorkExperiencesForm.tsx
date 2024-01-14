@@ -6,7 +6,7 @@ import {
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
 import { ResumeWorkExperience } from "@/app/lib/redux/types";
-import { BulletListTextArea, Input } from "./Form/InputGroup";
+import { BulletListTextArea, Inputi } from "./Form/InputGroup";
 
 export const WorkExperiencesForm = () => {
   const workExperiences = useAppSelector(selectWorkExperiences);
@@ -39,7 +39,7 @@ export const WorkExperiencesForm = () => {
             showDelete={showDelete}
             deleteButtonTooltipText="Delete job"
           >
-            <Input
+            <Inputi
               label="Company"
               labelClassName="col-span-full"
               name="company"
@@ -47,7 +47,7 @@ export const WorkExperiencesForm = () => {
               value={company}
               onChange={handleWorkExperienceChange}
             />
-            <Input
+            <Inputi
               label="Job Totle"
               labelClassName="col-span-4"
               name="jobTitle"
@@ -55,7 +55,7 @@ export const WorkExperiencesForm = () => {
               value={jobTitle}
               onChange={handleWorkExperienceChange}
             />
-            <Input
+            <Inputi
               label="Date"
               labelClassName="col-span-2"
               name="date"

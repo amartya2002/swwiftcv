@@ -9,9 +9,7 @@ const SANS_SERIF_FONT_FAMILIES = [
 const SERIF_FONT_FAMILIES = [
   "Lora",
   "RobotoSlab",
-  "Merriweather",
   "Caladea",
-  "PlayfairDisplay",
 ];
 
 export const FONT_FAMILIES = [

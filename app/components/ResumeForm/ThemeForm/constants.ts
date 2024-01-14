@@ -3,12 +3,10 @@ export const THEME_COLORS = [
   "#ef4444",
   "#fb923c",
   "#f97316",
-  "#fbbf24",
-  "#f59e0b",
-  "#22c55e",
-  "#15803d",
-  "#38bdf8",
-  "#0ea5e9",
-  "#818cf8",
-  "#6366f1",
+  "#1f1f1f",
+  "#000",
+  "#3b3b3b",
+  "#dedede",
+  "#ffffff"
+
 ];

@@ -15,7 +15,7 @@ import {
   LightBulbIcon,
   WrenchIcon,
 } from "@heroicons/react/24/outline";
-import { Input } from "./InputGroup";
+import { Inputi } from "./InputGroup";
 import { DeletIconButton, MoveIconButton, ShowIconButton } from "./IconButton";
 import { ExpanderWithHeightTransition } from "../../ExpanderWithHeightTransition";
 import {
@@ -41,7 +41,7 @@ export const BaseForm = ({
   className?: string;
 }) => (
   <section
-    className={`flex flex-col gap-3 rounded-md bg-white p-6 pt-4 shadow transition-opacity duration-200 ${className}`}
+    className={`flex flex-col gap-3 rounded-xl bg-white p-10 border ${className}`}
   >
     {children}
   </section>
@@ -81,10 +81,10 @@ export const Form = ({
   return (
     <BaseForm
       className={`transition-opacity duration-200 ${
-        showForm ? "pb-6" : "pb-2 opacity-60"
+        showForm ? "pb-6" : "pb-6 opacity-60"
       }`}
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-8">
         <div className="flex grow items-center gap-2">
           <Icon className="h-6 w-6 text-gray-600" aria-hidden="true" />
           <input

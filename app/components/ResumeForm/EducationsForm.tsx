@@ -10,7 +10,7 @@ import {
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
 import { ResumeEducation } from "@/app/lib/redux/types";
-import { BulletListTextArea, Input } from "./Form/InputGroup";
+import { BulletListTextArea, Inputi } from "./Form/InputGroup";
 import { BulletListIconButton } from "./Form/IconButton";
 
 export const EducationsForm = () => {
@@ -49,7 +49,7 @@ export const EducationsForm = () => {
             showDelete={showDelete}
             deleteButtonTooltipText="Delete school"
           >
-            <Input
+            <Inputi
               label="School"
               labelClassName="col-span-4"
               name="school"
@@ -57,7 +57,7 @@ export const EducationsForm = () => {
               value={school}
               onChange={handleWorkExperienceChange}
             />
-            <Input
+            <Inputi
               label="Date"
               labelClassName="col-span-2"
               name="date"
@@ -65,7 +65,7 @@ export const EducationsForm = () => {
               value={date}
               onChange={handleWorkExperienceChange}
             />
-            <Input
+            <Inputi
               label="Degree & Major"
               labelClassName="col-span-4"
               name="degree"
@@ -73,7 +73,7 @@ export const EducationsForm = () => {
               value={degree}
               onChange={handleWorkExperienceChange}
             />
-            <Input
+            <Inputi
               label="GPA"
               labelClassName="col-span-2"
               name="gpa"

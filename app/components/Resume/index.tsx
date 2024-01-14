@@ -15,7 +15,7 @@ import {
 import { ResumeControlBarCSR } from "./ResumeControlBar";
 
 export const Resume = () => {
-  const [scale, setScale] = useState(0.8);
+  const [scale, setScale] = useState(1);
   const resume = useAppSelector(selectResume);
   const settings = useAppSelector(selectSettings);
   const document = useMemo(
@@ -28,10 +28,17 @@ export const Resume = () => {
 
   return (
     <>
-      <div className="relative flex justify-center md:justify-start">
-        <FlexboxSpacer maxWidth={50} className="hidden md:block" />
-        <div className="relative">
-          <section className="h-[calc(100vh-var(--top-nav-bar-height)-var(--resume-control-bar-height))] overflow-hidden md:p-[var(--resume-padding)]">
+      <div className="mb-12">
+        {/* <FlexboxSpacer maxWidth={50} className="hidden md:block" /> */}
+        <div className="">
+        <ResumeControlBarCSR
+            scale={scale}
+            setScale={setScale}
+            documentSize={settings.documentSize}
+            document={document}
+            fileName={resume.profile.name + " - Resume"}
+          />
+          <section className="mb-6 mx-6 rounded-xl ">
             <ResumeIFrameCSR
               documentSize={settings.documentSize}
               scale={scale}
@@ -40,13 +47,7 @@ export const Resume = () => {
               <ResumePDF resume={resume} settings={settings} isPDF={false} />
             </ResumeIFrameCSR>
           </section>
-          <ResumeControlBarCSR
-            scale={scale}
-            setScale={setScale}
-            documentSize={settings.documentSize}
-            document={document}
-            fileName={resume.profile.name + " - Resume"}
-          />
+
         </div>
       </div>
     </>

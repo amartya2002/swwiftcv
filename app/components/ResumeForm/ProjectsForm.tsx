@@ -12,7 +12,7 @@ import {
 import { Form, FormSection } from "./Form";
 import { CreateHandleChangeArgsWithDescriptions } from "./types";
 import { ResumeEducation, ResumeProject } from "@/app/lib/redux/types";
-import { BulletListTextArea, Input } from "./Form/InputGroup";
+import { BulletListTextArea, Inputi } from "./Form/InputGroup";
 import { BulletListIconButton } from "./Form/IconButton";
 
 export const ProjectsForm = () => {
@@ -45,7 +45,7 @@ export const ProjectsForm = () => {
             showDelete={showDelete}
             deleteButtonTooltipText="Delete project"
           >
-            <Input
+            <Inputi
               label="Project Name"
               labelClassName="col-span-4"
               name="project"
@@ -53,7 +53,7 @@ export const ProjectsForm = () => {
               value={project}
               onChange={handleProjectChange}
             />
-            <Input
+            <Inputi
               label="Date"
               labelClassName="col-span-2"
               name="date"

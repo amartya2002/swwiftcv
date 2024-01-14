@@ -1,5 +1,5 @@
 "use client";
-
+import { Slider } from "@/components/ui/slider";
 import {
   ArrowDownTrayIcon,
   MagnifyingGlassIcon,
@@ -8,6 +8,9 @@ import dynamic from "next/dynamic";
 import { useSetDefaultScale } from "./hooks";
 import { usePDF } from "@react-pdf/renderer";
 import { useEffect } from "react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
+import { Label } from "@/components/ui/label";
 
 const ResumeControlBar = ({
   scale,
@@ -33,39 +36,40 @@ const ResumeControlBar = ({
     update(document);
   }, [update, document]);
   return (
-    <div className="sticky bottom-0 left-0 right-0 flex h-[var(--resume-control-bar-height)]  items-center justify-center px-[var(--resume-padding)] text-gray-600 lg:justify-between">
-      <div className="flex items-center gap-2">
-        <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
-        <input
-          type="range"
-          min={0.5}
-          max={1.5}
-          step={0.01}
-          value={scale}
-          onChange={(e) => {
-            setScaleOnResize(false);
-            setScale(Number(e.target.value));
-          }}
-        />
-        <div className="w-10">{`${Math.round(scale * 100)}%`}</div>
-        <label className="hidden items-center gap-1 lg:flex">
-          <input
-            type="checkbox"
-            className="mt-0.5 h-4 w-4"
-            checked={true}
-            onChange={() => setScaleOnResize((prev) => !prev)}
+    <div className=" my-6 border bg-white rounded-xl p-6 mx-6">
+      <div className="flex items-center gap-6 justify-between">
+        <div className="items-center flex gap-3 ">
+          <Slider
+            className="w-36"
+            max={1.5}
+            min={0.4}
+            step={0.01}
+            value={[scale]}
+            onValueChange={(e) => {
+              setScaleOnResize(false);
+              setScale(e[0]);
+            }}
           />
-          <span className="select-none">Autoscale</span>
-        </label>
+          <div className="w-10">{`${Math.round(scale * 100)}%`}</div>
+        </div>
+
+        <div className="flex gap-2 items-center ">
+          <Button
+            variant={"outline"}
+            onClick={() => setScaleOnResize((prev) => !prev)}
+          >
+            Autoscale
+          </Button>
+
+          <a
+            className={buttonVariants({ variant: "default" })}
+            href={instance.url!}
+            download={fileName}
+          >
+            Download
+          </a>
+        </div>
       </div>
-      <a
-        className="ml-1 flex items-center gap-1 rounded-md border border-gray-300 px-3 py-0.5 hover:bg-gray-100 lg:ml-8"
-        href={instance.url!}
-        download={fileName}
-      >
-        <ArrowDownTrayIcon className="h-4 w-4" />
-        <span className="whitespace-nowrap">Download Resume</span>
-      </a>
     </div>
   );
 };

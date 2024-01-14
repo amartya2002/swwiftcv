@@ -1,3 +1,5 @@
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import ContentEditable from "react-contenteditable";
 
 interface InputProps<K extends string, V extends string | string[]> {
@@ -19,16 +21,17 @@ export const InputGroupWrapper = ({
   className?: string;
   children?: React.ReactNode;
 }) => (
-  <label className={`text-base font-medium text-gray-700 ${className}`}>
-    {label}
+  <div className={` ${className}`}>
+    <Label className="">{label}</Label>
+    
     {children}
-  </label>
+  </div>
 );
 
 export const INPUT_CLASS_NAME =
-  "mt-1 px-3 py-2 block w-full rounded-md border border-gray-300 text-gray-300 shadow-sm outline-none font-normal text-base";
+  "mt- block w-full rounded-md border border-gray-300 text-zinc-400  text-sm";
 
-export const Input = <K extends string>({
+export const Inputi = <K extends string>({
   name,
   value = "",
   placeholder,
@@ -37,13 +40,13 @@ export const Input = <K extends string>({
   labelClassName,
 }: InputProps<K, string>) => (
   <InputGroupWrapper label={label} className={labelClassName}>
-    <input
+    <Input
       type="text"
       name={name}
       value={value}
       placeholder={placeholder}
       onChange={(e) => onChange(name, e.target.value)}
-      className={INPUT_CLASS_NAME}
+      
     />
   </InputGroupWrapper>
 );
@@ -65,7 +68,7 @@ export const BulletListTextArea = <T extends string>({
     <InputGroupWrapper label={label} className={wrapperClassName}>
       <ContentEditable
         contentEditable={true}
-        className={`${INPUT_CLASS_NAME} cursor-text [&>div]:list-item ${
+        className={`${INPUT_CLASS_NAME} cursor-text p-4 [&>div]:list-item ${
           showBulletPoints ? "pl-7" : "[&>div]:list-['']"
         }`}
         // placeholder={placeholder}
