@@ -13,8 +13,7 @@ export default function Create() {
         <div className="hidden md:grid  md:grid-cols-7 p-6 gap-3 ">
           <div className="col-span-4">
             <div className="h-screeni overflow-scrll">
-
-            <ResumeForm />
+              <ResumeForm />
             </div>
           </div>
           <div className="col-span-3 ">
@@ -24,10 +23,6 @@ export default function Create() {
 
         <div className="p-2 md:px-6 md:hidden ">
           <Tabs defaultValue="account" className="w-full">
-            <TabsList className="grid  mx-auto w-[80%] md:w-[30%] grid-cols-2">
-              <TabsTrigger value="account">Edit</TabsTrigger>
-              <TabsTrigger value="password">Preview</TabsTrigger>
-            </TabsList>
             <TabsContent value="account">
               {" "}
               <div>
@@ -38,9 +33,15 @@ export default function Create() {
               {" "}
               <Resume />
             </TabsContent>
+
+            <div className="bottom-0 fixed w-full bg-white  pt-4 pb-2 right-0 left-0 ">
+              <TabsList className="grid w-[80%] mx-auto  grid-cols-2">
+                <TabsTrigger value="account">Edit</TabsTrigger>
+                <TabsTrigger value="password">Preview</TabsTrigger>
+              </TabsList>
+            </div>
           </Tabs>
         </div>
-        
       </main>
     </Provider>
   );
