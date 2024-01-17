@@ -50,28 +50,35 @@ const ResumeIFrame = ({
   const height = isA4 ? A4_HEIGHT_PX : LETTER_HEIGHT_PX;
 
   return (
-    <div className="rounded-2xl p-2 "
-      style={{
-        maxWidth: `${width * scale}px`,
-        maxHeight: `${height * scale}px`,
-      }}
-    >
+    <div className="border md:flex mod:justify-center p-6  gradient-to-r bg-gradient-to-l from-red-100 to-stone-100 overflow-auto rounded-xl  h-[32rem]">
+      <div className="">
       <div
+        className="rounded-2xl  "
         style={{
-          width: `${width}px`,
-          height: `${height}px`,
-          transform: `scale(${scale})`,
+          maxWidth: `${width * scale}px`,
+          maxHeight: `${height * scale}px`,
         }}
-        className={`origin-top-left bg-white rounded-2xl `}
       >
-        <Frame className="rounded-2xl "
-          initialContent={iframeInitialContent}
-          style={{ width: "100%", height: "100%" }}
-          key={isA4 ? "A4" : "LETTER"}
+        <div
+          style={{
+            width: `${width}px`,
+            height: `${height}px`,
+            transform: `scale(${scale})`,
+          }}
+          className={`origin-top-left bg-white rounded-2xl `}
         >
-          {children}
-        </Frame>
+          <Frame
+            className="rounded-2xl "
+            initialContent={iframeInitialContent}
+            style={{ width: "100%", height: "100%" }}
+            key={isA4 ? "A4" : "LETTER"}
+          >
+            {children}
+          </Frame>
+        </div>
       </div>
+      </div>
+
     </div>
   );
 };

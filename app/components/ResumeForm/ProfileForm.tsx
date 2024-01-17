@@ -19,7 +19,9 @@ export const ProfileForm = () => {
 
   return (
     <BaseForm>
+    
       <div className="grid grid-cols-6 gap-8">
+        <p className="font-medium text-xl whitespace-nowrap">&#10023; Personal </p>
         <Inputi
           label="Name"
           labelClassName="col-span-full "

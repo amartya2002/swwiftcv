@@ -28,7 +28,7 @@ export const Resume = () => {
 
   return (
     <>
-      <div className="mb-12">
+      <div className="">
         {/* <FlexboxSpacer maxWidth={50} className="hidden md:block" /> */}
         <div className="">
         <ResumeControlBarCSR
@@ -38,7 +38,7 @@ export const Resume = () => {
             document={document}
             fileName={resume.profile.name + " - Resume"}
           />
-          <section className="mb-6 mx-6 rounded-xl ">
+          <section className="  rounded-xl ">
             <ResumeIFrameCSR
               documentSize={settings.documentSize}
               scale={scale}

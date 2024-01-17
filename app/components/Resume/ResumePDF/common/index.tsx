@@ -24,20 +24,12 @@ export const ResumePDFSection = ({
   >
     {heading && (
       <View style={{ ...styles.flexRow, alignItems: "center" }}>
-        {themeColor && (
-          <View
-            style={{
-              height: "3.75pt",
-              width: "30pt",
-              backgroundColor: themeColor,
-              marginRight: spacing["3.5"],
-            }}
-          />
-        )}
         <Text
           style={{
             fontWeight: "bold",
             letterSpacing: "0.3pt",
+            color: themeColor,
+            fontSize: "12pt"
           }}
         >
           {heading}
@@ -116,7 +108,8 @@ export const ResumePDFBulletList = ({
               style={{
                 paddingLeft: spacing["2"],
                 paddingRight: spacing["2"],
-                lineHeight: "1.3",
+                lineHeight: "0.8",
+                
               }}
               bold={true}
             >
@@ -125,7 +118,7 @@ export const ResumePDFBulletList = ({
           )}
 
           <ResumePDFText
-            style={{ lineHeight: "1.3", flexGrow: 1, flexBasis: 0 }}
+            style={{ lineHeight: "1.3", flexGrow: 1, flexBasis: 0, color:'#5B5757' }}
           >
             {item}
           </ResumePDFText>

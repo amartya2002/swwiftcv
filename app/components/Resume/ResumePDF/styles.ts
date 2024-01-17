@@ -48,6 +48,11 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
+  flexBetween: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   flexCol: {
     display: "flex",
     flexDirection: "column",

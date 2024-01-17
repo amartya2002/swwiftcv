@@ -18,20 +18,19 @@ export const ResumePDFProfile = ({
   const iconProps = { email, phone, location, url };
 
   return (
-    <ResumePDFSection style={{ marginTop: spacing["4"] }}>
+    <ResumePDFSection style={{ marginTop: spacing["8"] }}>
       <ResumePDFText
-        bold={true}
         themeColor={themeColor}
-        style={{ fontSize: "20pt" }}
+        style={{ fontSize: "24pt", textAlign: "center"}}
       >
         {name}
       </ResumePDFText>
-      {summary && <ResumePDFText>{summary}</ResumePDFText>}
       <View
         style={{
           ...styles.flexRowBetween,
           flexWrap: "wrap",
-          marginTop: spacing["0.5"],
+          margin: spacing["2.5"],
+
         }}
       >
         {Object.entries(iconProps).map(([key, value]) => {
@@ -81,14 +80,17 @@ export const ResumePDFProfile = ({
                 gap: spacing["1"],
               }}
             >
-              <ResumePDFIcon type={iconType} isPDF={isPDF} />
+              <ResumePDFIcon  type={iconType} isPDF={isPDF} />
               <Wrapper>
-                <ResumePDFText>{value}</ResumePDFText>
+                <ResumePDFText style={{color:'#838383'}}>{value}</ResumePDFText>
               </Wrapper>
             </View>
           );
         })}
       </View>
+      
+      {summary && <ResumePDFText style={{color:'#5B5757'}}>{summary}</ResumePDFText>}
+
     </ResumePDFSection>
   );
 };

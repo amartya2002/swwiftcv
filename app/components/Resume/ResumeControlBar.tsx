@@ -2,8 +2,9 @@
 import { Slider } from "@/components/ui/slider";
 import {
   ArrowDownTrayIcon,
-  MagnifyingGlassIcon,
+  MagnifyingGlassIcon, DocumentArrowDownIcon
 } from "@heroicons/react/24/outline";
+import {DownloadIcon} from '@radix-ui/react-icons'
 import dynamic from "next/dynamic";
 import { useSetDefaultScale } from "./hooks";
 import { usePDF } from "@react-pdf/renderer";
@@ -36,7 +37,7 @@ const ResumeControlBar = ({
     update(document);
   }, [update, document]);
   return (
-    <div className=" my-6 border bg-white rounded-xl p-6 mx-6">
+    <div className=" my-6 border bg-white rounded-xl p-6 ">
       <div className="flex items-center gap-6 justify-between">
         <div className="items-center flex gap-3 ">
           <Slider
@@ -57,8 +58,9 @@ const ResumeControlBar = ({
           <Button
             variant={"outline"}
             onClick={() => setScaleOnResize((prev) => !prev)}
+            className="text-xs"
           >
-            Autoscale
+            Reset Scale 
           </Button>
 
           <a
@@ -66,7 +68,7 @@ const ResumeControlBar = ({
             href={instance.url!}
             download={fileName}
           >
-            Download
+           <DownloadIcon/>
           </a>
         </div>
       </div>

@@ -7,6 +7,5 @@ export const THEME_COLORS = [
   "#000",
   "#3b3b3b",
   "#dedede",
-  "#ffffff"
 
 ];

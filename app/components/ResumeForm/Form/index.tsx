@@ -15,7 +15,7 @@ import {
   LightBulbIcon,
   WrenchIcon,
 } from "@heroicons/react/24/outline";
-import { Inputi } from "./InputGroup";
+import { Input } from "@/components/ui/input";
 import { DeletIconButton, MoveIconButton, ShowIconButton } from "./IconButton";
 import { ExpanderWithHeightTransition } from "../../ExpanderWithHeightTransition";
 import {
@@ -23,7 +23,7 @@ import {
   deleteSectionInFormByIdx,
   moveSectionInForm,
 } from "@/app/lib/redux/resumeSlice";
-import { PlusSmallIcon } from "@heroicons/react/24/outline";
+import { Button } from "@/components/ui/button";
 
 const FORM_TO_ICON: { [section in ShowForm]: typeof BuildingOfficeIcon } = {
   workExperiences: BuildingOfficeIcon,
@@ -41,7 +41,7 @@ export const BaseForm = ({
   className?: string;
 }) => (
   <section
-    className={`flex flex-col gap-3 rounded-xl bg-white p-10 border ${className}`}
+    className={`flex flex-col gap- rounded-xl bg-white p-8 border ${className}`}
   >
     {children}
   </section>
@@ -81,15 +81,15 @@ export const Form = ({
   return (
     <BaseForm
       className={`transition-opacity duration-200 ${
-        showForm ? "pb-6" : "pb-6 opacity-60"
+        showForm ? "pb-6" : "pb-2 opacity-40"
       }`}
     >
-      <div className="flex items-center justify-between gap-8">
-        <div className="flex grow items-center gap-2">
-          <Icon className="h-6 w-6 text-gray-600" aria-hidden="true" />
-          <input
-            type="text"
-            className="block w-full border-b border-transparent text-lg font-semibold tracking-wide text-gray-900 outline-none hover:border-gray-300 hover:shadow-sm focus:border-gray-300 focus:shadow-sm"
+      <div className="flex items-center justify-between">
+        <div className=" flex items-center gap-1.5">
+          <p className="text-xl">&#10023;</p>
+          <Input
+            
+            className=" w-full text-xl font-medium  border-none p-0"
             value={heading}
             onChange={(e) => setHeading(e.target.value)}
           />
@@ -108,17 +108,16 @@ export const Form = ({
         {children}
       </ExpanderWithHeightTransition>
       {showForm && addButtonText && (
-        <div className="mt-2 flex justify-end">
-          <button
+        <div className=" flex justify-end">
+          <Button
             type="button"
             onClick={() => {
               dispatch(addSectionInForm({ form }));
             }}
-            className="flex items-center rounded-md bg-white py-2 pl-3 pr-4 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            className="bg-[#3b3b3b]"
           >
-            <PlusSmallIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-gray-400" />
-            {addButtonText}
-          </button>
+            &#43; {addButtonText}
+          </Button>
         </div>
       )}
     </BaseForm>
@@ -154,12 +153,10 @@ export const FormSection = ({
 
   return (
     <>
-      {idx !== 0 && (
-        <div className="mb-4 mt-6 border-t-2 border-dotted border-gray-200" />
-      )}
-      <div className="relative grid grid-cols-6 gap-3">
+      {idx !== 0 && <hr className="my-6" />}
+      <div className=" relative grid grid-cols-6 gap-8 py-7 px-1">
         {children}
-        <div className={`absolute right-0 top-0 flex gap-0.5`}>
+        <div className={` absolute right-0 top-0 flex gap-0.5`}>
           <div
             className={`transition-all duration-300 ${
               showMoveUp ? "" : "invisible opacity-0"

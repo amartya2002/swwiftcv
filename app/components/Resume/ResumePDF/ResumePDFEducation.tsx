@@ -32,10 +32,10 @@ export const ResumePDFEducation = ({
                 marginTop: hideScoolName ? "-" + spacing["1"] : spacing["1.5"],
               }}
             >
-              <ResumePDFText>{`${
+              <ResumePDFText style={{color:'#5B5757'}}>{`${
                 gpa ? `${degree} - ${Number(gpa) ? gpa + " GPA" : gpa}` : degree
               }`}</ResumePDFText>
-              <ResumePDFText>{date}</ResumePDFText>
+              <ResumePDFText style={{color:'#838383'}}>{date}</ResumePDFText>
             </View>
             {showDescriptions && (
               <View style={{ ...styles.flexCol, marginTop: spacing["1.5"] }}>

@@ -94,7 +94,6 @@ export const ResumePDF = ({
               style={{
                 width: spacing["full"],
                 height: spacing[3.5],
-                backgroundColor: themeColor,
               }}
             />
           )}

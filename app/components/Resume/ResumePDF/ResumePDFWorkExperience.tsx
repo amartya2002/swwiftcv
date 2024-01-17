@@ -32,10 +32,11 @@ export const ResumePDFWorkExperience = ({
               }}
             >
               <ResumePDFText>{jobTitle}</ResumePDFText>
-              <ResumePDFText>{date}</ResumePDFText>
+              <ResumePDFText style={{color:'#838383'}}>{date}</ResumePDFText>
             </View>
-            <View style={{ ...styles.flexCol, marginTop: spacing["1.5"] }}>
-              <ResumePDFBulletList items={descriptions} />
+
+            <View  style={{ ...styles.flexCol, marginTop: spacing["1.5"], }}>
+              <ResumePDFBulletList  items={descriptions} />
             </View>
           </View>
         );
